@@ -14,3 +14,26 @@
         result
         (prod-iter (next a) (* result (term a)))))
   (prod-iter a 1))
+  
+  ; pi/4 convergence
+  
+  ; recursive
+  (define (prod-proc a b)
+  (define (term-p n)
+  (if (= n 1)
+      (/ 2 3)
+      (/ 1 (- 1
+              (/ 1.0 (* 4 (sq n)))))))
+  (product term-p 1 inc b))
+  
+  ; iterative
+  
+  (define (prod-proc-i a b)
+  (define (term-p n)
+  (if (= n 1)
+      (/ 2 3)
+      (/ 1 (- 1
+              (/ 1.0 (* 4 (sq n)))))))
+  (product-i term-p 1 inc b))
+ 
+  
