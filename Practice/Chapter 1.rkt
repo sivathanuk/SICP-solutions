@@ -5,7 +5,7 @@
 ; primality divisor
 ; fibonacci r,i
 ; sqrt normal
-; half-interval method
+; sqrt half-interval method
 ; GCD
 ; primality Euler
 ; integral cube- [f(a + dx/2) + f(a + dx + dx/2) + f(a + 2dx + dx/2)+...] * dx
@@ -21,3 +21,9 @@ yk = f(a + kh)|#
 ; repeat function
 ; repeat fixed-point average damp to find roots
 ; iterative improvement - sqrt. fixed-point
+
+; extra:
+#| Miller Rabin
+denomination split for sum
+fractional sqrt
+|#
