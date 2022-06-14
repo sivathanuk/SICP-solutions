@@ -26,14 +26,10 @@
   (display (cdr z)))
 
 
-(print-rat (Make-rat -3 4))
-(print-rat (Make-rat 3 -4))
-(print-rat (Make-rat -3 -4))
-(print-rat (Make-rat 3 4))
-(newline)
-(print-rat (Make-rat -40 4))
-(print-rat (Make-rat 1250 -25))
-(print-rat (Make-rat 5 25))
+(print-rat (Make-rat -30 40))
+(print-rat (Make-rat 30 -40))
+(print-rat (Make-rat -30 -40))
+(print-rat (Make-rat 30 40))
 
 
 
@@ -43,8 +39,5 @@
 -3/4
 3/4
 3/4
--10/1
--50/1
-1/5
 
 |#
