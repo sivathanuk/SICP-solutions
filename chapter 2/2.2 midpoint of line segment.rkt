@@ -1,6 +1,5 @@
 #lang sicp
 ; constructors and selectors
-
 (define (make-segment start-segment end-segment)
   (cons start-segment end-segment))
 
@@ -14,7 +13,6 @@
   (cdr p))
 
 ; helper functions
-
 (define (average x y)
   (/ (+ x y) 2.0))
 
