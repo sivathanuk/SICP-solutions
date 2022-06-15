@@ -24,6 +24,7 @@
 (define (rect1 p1 p2 p3 p4)
   (cons (cons p1 p2)
         (cons p3 p4)))
+        
 ;--------------------------------------------;      
 ; helper functions
 (define (square n)
@@ -43,7 +44,29 @@
         guess
         (try (improve guess))))
   (try 1.0))
+  
+; geometric center
+(define (geom-center a b c d)
+  (make-point (/ (+ (x-point a) (x-point b) (x-point c) (x-point d)) 4.0)
+              (/ (+ (y-point a) (y-point b) (y-point c) (y-point d)) 4.0)))
+              
 ;--------------------------------------------;
+; is-rectangle ?
+(define (rectangle? rect)
+  (let
+      ((p1 (car (car rect)))
+       (p2 (cdr (car rect)))
+       (p3 (car (cdr rect)))
+       (p4 (cdr (cdr rect))))
+    (let
+        ((c (geom-center p1 p2 p3 p4)))
+      (if (= (round (distance p1 c))
+             (round (distance p2 c))
+             (round (distance p3 c))
+             (round (distance p4 c)))
+          #t
+          #f))))
+
 ; distance between two points
 (define (distance p1 p2)
   (let
@@ -56,7 +79,6 @@
         (square (- y2 y1))))))
         
 ; rectangle 1 area, perimeter
-
 (define (area1 rect)
    (let
       ((seg1 (distance (car (car rect)) (cdr (car rect))))
@@ -75,7 +97,6 @@
    
 ;--------------------------------------------;
 ;check output rectangle 1
-
 ; provide points
 (define p1 (make-point 10 70))
 (define p2 (make-point 10 20))
@@ -85,6 +106,14 @@
 
 (define rect-4p (rect1 p1 p2 p3 p4))
 
+(rectangle? rect-4p)
+
 (area1 rect-4p)
 (perimeter1 rect-4p)
+
+#| output
+#t
+1500.000003815791
+160.00000025438595
+|#
 
