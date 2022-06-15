@@ -51,6 +51,17 @@
               (/ (+ (y-point a) (y-point b) (y-point c) (y-point d)) 4.0)))
               
 ;--------------------------------------------;
+; distance between two points
+(define (distance p1 p2)
+  (let
+      ((x1 (x-point p1))
+       (x2 (x-point p2))
+       (y1 (y-point p1))
+       (y2 (y-point p2)))
+    (sqrt
+     (+ (square (- x2 x1))
+        (square (- y2 y1))))))
+        
 ; is-rectangle ?
 (define (rectangle? rect)
   (let
@@ -66,17 +77,6 @@
              (round (distance p4 c)))
           #t
           #f))))
-
-; distance between two points
-(define (distance p1 p2)
-  (let
-      ((x1 (x-point p1))
-       (x2 (x-point p2))
-       (y1 (y-point p1))
-       (y2 (y-point p2)))
-    (sqrt
-     (+ (square (- x2 x1))
-        (square (- y2 y1))))))
         
 ; rectangle 1 area, perimeter
 (define (area1 rect)
