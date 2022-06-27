@@ -76,3 +76,24 @@ a b
 (div-interval a b)
 (width (div-interval a b))
 (width-interval a b)
+
+; output
+
+#|
+intervals: a, b
+(2 . 3)
+(1 . 5)
+addition(3 . 8)
+2.5
+2.5
+subtraction(-3 . 2)
+2.5
+2.5
+multiplication(2 . 15)
+6.5
+2.5
+division(0.4 . 3.0)
+1.3
+2.5
+
+|#
