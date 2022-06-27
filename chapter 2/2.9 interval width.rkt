@@ -55,31 +55,24 @@ a b
 
 ; addition
 (display "addition")
-
 (add-interval a b)
-
-(width (add-interval a
-                     b))
-(width-interval a
-                b)
+(width (add-interval a b))
+(width-interval a b)
 
 ; subtract interval
 (display "subtraction")
 (sub-interval a b)
-
 (width (sub-interval a b))
 (width-interval a b)
 
 ; mul interval
 (display "multiplication")
 (mul-interval a b)
-
 (width (mul-interval a b))
 (width-interval a b)
 
 ; division
 (display "division")
 (div-interval a b)
-
 (width (div-interval a b))
 (width-interval a b)
